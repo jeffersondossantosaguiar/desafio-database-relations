@@ -1,14 +1,14 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm'
 
-import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository';
-import ICreateOrderDTO from '@modules/orders/dtos/ICreateOrderDTO';
-import Order from '../entities/Order';
+import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository'
+import ICreateOrderDTO from '@modules/orders/dtos/ICreateOrderDTO'
+import Order from '../entities/Order'
 
 class OrdersRepository implements IOrdersRepository {
-  private ormRepository: Repository<Order>;
+  private ormRepository: Repository<Order>
 
   constructor() {
-    this.ormRepository = getRepository(Order);
+    this.ormRepository = getRepository(Order)
   }
 
   public async create({ customer, products }: ICreateOrderDTO): Promise<Order> {
@@ -20,4 +20,4 @@ class OrdersRepository implements IOrdersRepository {
   }
 }
 
-export default OrdersRepository;
+export default OrdersRepository
