@@ -24,12 +24,12 @@ class CreateCustomerService {
       throw new AppError('Email address already exists')
     }
 
-    const user = await this.customersRepository.create({
+    const customer = await this.customersRepository.create({
       name,
       email
     })
 
-    return user
+    return customer
   }
 }
 
